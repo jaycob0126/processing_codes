@@ -1,26 +1,39 @@
 
 PImage img;
+String imgName = "Thea PRC Medium.jpg";
+String ASCII = "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\\|()1{}[]?-_+~<>i!lI;:,\"^`'.    ";
+//String ASCII = "@%#*+=-:.   ";
 
 void setup() {
 
-  size(500, 500);
+  size(800, 800);
 
-  img = loadImage("Thea PRC Small.jpg");
-  //image(img, 0, 0, width, height);
-
-  img.loadPixels();
-
-  for (int j=0; j < img.height; j++) {
-    for (int i=0; i < img.width; i++) {
-      int index = (i + j*img.width)*4;
-      color r = img.pixels[index];
-      color g = img.pixels[index+1];
-      color b = img.pixels[index+2];
-      
-      fill(r,g,b);
-    }
-  }
+  img = loadImage(imgName);
 }
 
 void draw() {
+  background(0);
+  img.loadPixels();
+
+  float scaleX = width / img.width;
+  float scaleY = height / img.height;
+  
+  String sequence;
+  
+  for (int j=0; j < img.height; j++) {
+    for (int i=0; i < img.width; i++) {
+      int index = (i + j*img.width);
+      float r = red(img.pixels[index]);
+      float g = green(img.pixels[index]);
+      float b = blue(img.pixels[index]);
+
+      float ave = (r + g + b)/3;
+      float mapAscii = map(ave, 0, 255, 0, ASCII.length()-1);
+
+      noStroke();
+      text(ASCII.charAt(int(mapAscii)), i*scaleX, j*scaleY);
+    }
+  }
+
+  noLoop();
 }
