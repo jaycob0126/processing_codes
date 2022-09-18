@@ -1,8 +1,8 @@
 
 PImage img;
 String imgName = "Thea PRC Medium.jpg";
-String ASCII = "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\\|()1{}[]?-_+~<>i!lI;:,\"^`'.    ";
-//String ASCII = "@%#*+=-:.   ";
+//String ASCII = "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\\|()1{}[]?-_+~<>i!lI;:,\"^`'.    ";
+String ASCII = "@%#*+=-:.   ";
 
 void setup() {
 

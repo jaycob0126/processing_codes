@@ -1,13 +1,13 @@
-String material = "Copper"; //<>// //<>// //<>// //<>//
-float leftEndTemp = 150;      //degC
-float rightEndTemp = 30;   //degC
-float rodLength = 6.;      //mm
+String material = "Steel"; //<>// //<>// //<>// //<>//
+float leftEndTemp = 30;      //degC
+float rightEndTemp = 1300;   //degC
+float rodLength = 100;      //mm
 boolean fixRightEnd = true; //true if rightEnd temperature is fixed
 float div = 1;
 
 float delT = 0.0001;
 float delX = 0.1;
-float thDiffusivity = .082;
+float thDiffusivity = 18.8;
 
 float[] initialTemp;
 float[] finalTemp;
